@@ -66,6 +66,8 @@ def draw(image_path: str, regions: List[Tuple[int, int, int, int, int]], output_
     
     if platform.system() == "Linux":
         font_path = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+    elif platform.system() == "Darwin":
+        font_path = "/System/Library/Fonts/HelveticaNeue.ttc"
     elif platform.system() == "Windows":
         font_path = "C:/Windows/Fonts/Arial.ttf"
     else:
