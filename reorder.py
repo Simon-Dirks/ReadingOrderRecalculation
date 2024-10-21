@@ -114,7 +114,8 @@ def update_reading_order_in_xml(xml_file: str, updated_df: pd.DataFrame, overwri
 
     xml_bytes = ET.tostring(root, encoding='UTF-8', method='xml', xml_declaration=True)
     xml_str = xml_bytes.decode('UTF-8')
-
+    xml_str = re.sub(r'\s+/>', '/>', xml_str)
+    
     xml_str = re.sub(r'(<\?xml version=\'1.0\' encoding=\'UTF-8\'\?>)',
                      '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', xml_str)
 
